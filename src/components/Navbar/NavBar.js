@@ -41,7 +41,8 @@ import { useScrollSection } from "react-scroll-section";
       padding: "20px 30px",
     },
     menuButtonDesktop:{
-      fontWeight:'bold'
+      fontWeight:'bold',
+      fontSize:'1em'
     }
   }));
   

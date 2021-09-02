@@ -8,6 +8,12 @@ const theme = createTheme({
     secondary: {
       main: '#4db6ad',
     },
+  },
+  typography: {
+    fontFamily: [
+      'IBM Plex Sans Arabic',
+       'sans-serif'
+    ].join(','),
   },  
 });
 
