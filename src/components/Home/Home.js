@@ -39,7 +39,7 @@ function Home() {
         <Grid container className={classes.root} justifyContent="center" alignContent="center">
             <Grid item xs={12}>
                 <Typography className={classes.welcomeText} variant="h2">
-                    Welcome!
+                    {t("homeWelcome")}
                 </Typography>
             </Grid>
             <Grid item xs={5} sm={3} md={2}>

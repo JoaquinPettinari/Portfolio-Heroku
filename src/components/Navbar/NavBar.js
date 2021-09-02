@@ -14,10 +14,10 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link as RouterLink } from "react-router-dom";
 import i18n from '../../translation';
 import spainImage from '../../assets/spain.png'
 import englandImage from '../../assets/england.png'
+import { useScrollSection } from "react-scroll-section";
   
   
   const useStyles = makeStyles(() => ({   
@@ -45,9 +45,14 @@ import englandImage from '../../assets/england.png'
     }
   }));
   
-  export default function NavBar() {
+  export default function NavBar({ onClickSectionButtons }) {
     const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop } = useStyles();
     const { t } = useTranslation()
+    const homeSection = useScrollSection('home');
+    const aboutSection = useScrollSection('about');
+    const jobsSection = useScrollSection('jobs');
+    const studysSection = useScrollSection('studys');
+    const contactSection = useScrollSection('contact');  
   
     const [state, setState] = useState({
       mobileView: false,
@@ -59,23 +64,23 @@ import englandImage from '../../assets/england.png'
     const headersData = [
         {
             label: t("buttonHome"),
-            href: "#home",
+            section: homeSection,
         },
         {
             label: t("buttonAbout"),
-            href: "#about",
+            section: aboutSection,
         },
         {
             label: t("buttonJobs"),
-            href: "#jobs",
+            section: jobsSection,
         },
         {
             label: t("buttonStudys"),
-            href: "#studys",
+            section: studysSection,
         },
         {
             label: t("buttonContact"),
-            href: "#contact"
+            section: contactSection
         }
     ];
   
@@ -141,12 +146,13 @@ import englandImage from '../../assets/england.png'
     };
   
     const getDrawerChoices = () => {
-      return headersData.map(({ label, href }) => {
+      return headersData.map(({ label, section }) => {
         return (
           <Link
             {...{
-              component: RouterLink,
-              to: href,
+              // component: RouterLink,
+              // to: href,
+              onClick: section.onClick,
               color: "inherit",
               style: { textDecoration: "none" },
               key: label,
@@ -185,14 +191,15 @@ import englandImage from '../../assets/england.png'
     );
   
     const getMenuButtons = () => {
-      return headersData.map(({ label, href }) => {
+      return headersData.map(({ label, section }) => {
         return (
           <Button
             {...{
               key: label,
               color: "inherit",
-              to: href,
-              component: RouterLink,
+              // to: href,
+              // component: RouterLink,
+              onClick: section.onClick,
               className: `${menuButton} ${menuButtonDesktop}`,
             }}
           >

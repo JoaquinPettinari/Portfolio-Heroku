@@ -4,7 +4,8 @@ const translateSp = {
     'buttonJobs': 'Trabajos',
     'buttonStudys': 'Estudios',
     'buttonContact': 'Contacto',
-    'homeContactMeButton': 'Contactame'
+    'homeContactMeButton': 'Contactame',
+    'homeWelcome': '¡Bienvenido!',
 }
 
 export default translateSp
