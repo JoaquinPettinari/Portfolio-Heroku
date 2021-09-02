@@ -27,11 +27,11 @@ import englandImage from '../../assets/england.png'
       color: "#FFFEFE",
       textAlign: "left",
     },
-    menuButton: {
-      fontFamily: "Open Sans, sans-serif",
+    menuButton: {      
       fontWeight: 700,
       size: "18px",
       marginLeft: "38px",
+      textTransform: 'capitalize'
     },
     toolbar: {
       display: "flex",
@@ -40,10 +40,13 @@ import englandImage from '../../assets/england.png'
     drawerContainer: {
       padding: "20px 30px",
     },
+    menuButtonDesktop:{
+      fontWeight:'bold'
+    }
   }));
   
   export default function NavBar() {
-    const { logo, menuButton, toolbar, drawerContainer, flexGrowOnMobile } = useStyles();
+    const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop } = useStyles();
     const { t } = useTranslation()
   
     const [state, setState] = useState({
@@ -56,23 +59,23 @@ import englandImage from '../../assets/england.png'
     const headersData = [
         {
             label: t("buttonHome"),
-            href: "/listings",
+            href: "#home",
         },
         {
             label: t("buttonAbout"),
-            href: "/mentors",
+            href: "#about",
         },
         {
             label: t("buttonJobs"),
-            href: "/account",
+            href: "#jobs",
         },
         {
             label: t("buttonStudys"),
-            href: "/logout",
+            href: "#studys",
         },
         {
             label: t("buttonContact"),
-            href: "/contact"
+            href: "#contact"
         }
     ];
   
@@ -149,7 +152,7 @@ import englandImage from '../../assets/england.png'
               key: label,
             }}
           >
-            <MenuItem>{label}</MenuItem>
+            <MenuItem >{label}</MenuItem>
           </Link>
         );
       });
@@ -164,8 +167,8 @@ import englandImage from '../../assets/england.png'
                 displayEmpty
                 disableUnderline
                 >
-                    <MenuItem value="en"><img src={englandImage} /></MenuItem>
-                    <MenuItem value="sp"><img src={spainImage} /></MenuItem>
+                  <MenuItem value="en"><img src={englandImage} /></MenuItem>
+                  <MenuItem value="sp"><img src={spainImage} /></MenuItem>
                 </Select>
             </FormControl>
         )
@@ -190,7 +193,7 @@ import englandImage from '../../assets/england.png'
               color: "inherit",
               to: href,
               component: RouterLink,
-              className: menuButton,
+              className: `${menuButton} ${menuButtonDesktop}`,
             }}
           >
             {label}

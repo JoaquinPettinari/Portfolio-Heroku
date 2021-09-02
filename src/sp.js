@@ -4,6 +4,7 @@ const translateSp = {
     'buttonJobs': 'Trabajos',
     'buttonStudys': 'Estudios',
     'buttonContact': 'Contacto',
+    'homeContactMeButton': 'Contactame'
 }
 
 export default translateSp

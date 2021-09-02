@@ -3,7 +3,8 @@ const translateEn = {
     'buttonAbout': 'About',
     'buttonJobs': 'Jobs',
     'buttonStudys': 'Studys',
-    'buttonContact': 'Contact'
+    'buttonContact': 'Contact',
+    'homeContactMeButton': 'Contact me'
 }
 
 export default translateEn
