@@ -17,13 +17,13 @@ function CentralPart(){
     return(
         <Carousel autoPlay showStatus={false} showIndicators={false} showThumbs={false} infiniteLoop>
             <div>
-                <img src={MyPhoto1} className={photos} />
+                <img src={MyPhoto1} alt="Joaquin's Photo1" className={photos} />
             </div>
             <div>
-                <img src={MyPhoto2} className={photos}/>
+                <img src={MyPhoto2} alt="Joaquin's Photo2" className={photos}/>
             </div>
             <div>
-                <img src={MyPhoto3} className={photos}/>
+                <img src={MyPhoto3} alt="Joaquin's Photo3" className={photos}/>
             </div>
         </Carousel>
     )

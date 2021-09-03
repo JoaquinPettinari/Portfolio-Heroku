@@ -174,8 +174,8 @@ import { useScrollSection } from "react-scroll-section";
                 displayEmpty
                 disableUnderline
                 >
-                  <MenuItem value="en"><img src={englandImage} /></MenuItem>
-                  <MenuItem value="sp"><img src={spainImage} /></MenuItem>
+                  <MenuItem value="en"><img src={englandImage} alt="Spain Icon" /></MenuItem>
+                  <MenuItem value="sp"><img src={spainImage} alt="British Icon" /></MenuItem>
                 </Select>
             </FormControl>
         )

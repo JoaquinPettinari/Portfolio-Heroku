@@ -1,6 +1,5 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import { Trans, useTranslation } from "react-i18next";
-import { Link, useHistory } from "react-router-dom";
 import JPButton from "../JPButton";
 
 const useStyles = makeStyles(() => ({
@@ -15,7 +14,10 @@ const useStyles = makeStyles(() => ({
 function LeftPart(){
     const { t } = useTranslation()
     const { bold, aboutMySelf } = useStyles()
-    const history = useHistory()
+
+    const downloadCV = () => {
+        window.open("https://drive.google.com/file/d/1c0Uk-cYi5Ghe-C2G9kfqDwvphclwwU99/view?usp=sharing", "_blank")
+    }
 
     return(
         <>
@@ -24,18 +26,17 @@ function LeftPart(){
             </Typography>
             <Typography variant="subtitle2" className={bold}>
                 {t("aboutProfession")}
-            </Typography>
+            </Typography>            
             <Typography variant="subtitle1" className={`${aboutMySelf} ${bold}`} >
                 <br />
                 <Trans components={{ br: <br />}}>
                     {t("aboutMySelf")}
                 </Trans>
-            </Typography>
+            </Typography>            
             <JPButton
                 label={t("homeDownloadCV")}
-                capitalize={true}
-                component={Link}
-                to=""
+                capitalize
+                onClick={downloadCV}                           
             />
         </>
     )

@@ -1,6 +1,6 @@
-import { Button, Grid, makeStyles, Paper, Typography } from "@material-ui/core"
+import { Grid, makeStyles, Typography } from "@material-ui/core"
 import { useTranslation } from "react-i18next"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import HomeBackground from '../../assets/homeBackground.jpg'
 import JPButton from "../JPButton"
 
@@ -12,15 +12,22 @@ const useStyles = makeStyles(() => ({
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        position: 'relative',
         width: '100%',
         minHeight:'100vh',
         textAlign: 'center',        
-        "&:before":{
-            backgroundColor: 'rgba(0,0,0,0.6)'
+        '&::before':{
+            content:'',
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            backgroundColor: 'rgba(0,0,0,0.6)',
         }
     },    
     welcomeText:{
-        fontSize:'5vw',
+        fontSize:'3vw',
         color:'#ffffff',
         fontWeight:'bold'
     }

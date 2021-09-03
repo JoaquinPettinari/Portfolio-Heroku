@@ -17,7 +17,7 @@ function About() {
 
     return(
         <Grid container justifyContent="space-evenly" alignContent="center" className={classes.root}>
-            <Grid item xs={12} sm={6} md={4} className={classes.descriptionContainer}>
+            <Grid item xs={12} sm={6} md={4} className={classes.descriptionContainer} spacing={4}>
                 <LeftPart />
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
