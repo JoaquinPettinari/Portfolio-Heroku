@@ -11,6 +11,10 @@ import JPButton from '../JPButton'
 import emailjs from 'emailjs-com';
 import { MAIL_SERVICE_ID, MAIL_TEMPLATE_ID, MAIL_USER_ID } from "../../constants";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import ModalAfterMail from "./ModalAfterMail";
+import ErrorIconLottie from '../../assets/lotties/errorMail.json'
+import SuccessMail from '../../assets/lotties/successMail.json'
 
 const useStyles = makeStyles(() => ({
     root:{        
@@ -29,18 +33,31 @@ const useStyles = makeStyles(() => ({
 
 }))
 
-
 function Contact(){
     const { root, mailContainer, textBox, submitButton } = useStyles();
-    const { t } = useTranslation()
+    const [ dataModal, setDataModal ] = useState({iconModal: '', titleModal:'', subtitleModal:'' });
+    const [ textFieldData, setTextFieldData ] = useState('')
+    const [ isOpen, setIsOpen ] = useState(false);
+    const { t } = useTranslation();
+
+    const textFiledData = [
+        { name: 'subject', label: "contactMailSubject", validators: ['required'], errorMessages:[t("textFieldMailRequired")] },
+        { name: 'name', label: "contactMailName", validators: ['required'], errorMessages:[t("textFieldMailRequired")] },
+        { name: 'email', label: "contactMailEmail", validators: ['required', 'isEmail'], errorMessages:[t("textFieldMailRequired"), t("textFieldMailErrorMail")] },
+    ]
+
+    const dataModalMail = [
+        { iconModal: ErrorIconLottie, titleModal:t("contactModalErrorTitle"), subtitleModal:"contactModalErrorSubtitle" },
+        { iconModal: SuccessMail, titleModal:t("contactModalSuccessTitle"), subtitleModal:"contactModalSuccessSubtitle" }
+    ]
     
     const sendMail = (e) => {        
         emailjs.sendForm(MAIL_SERVICE_ID, MAIL_TEMPLATE_ID , e.target, MAIL_USER_ID)
             .then((result) => {
-                console.log(result.text);
+                handleOpenModal(dataModalMail[1])
             }, (error) => {
-                console.log(error.text);
-        });
+                handleOpenModal(dataModalMail[0])
+        });        
     }
 
     const goToLinkedin = () => {
@@ -60,8 +77,21 @@ function Contact(){
         )
     }
 
+    const onChangeInputs = (e) => {
+        setTextFieldData({...textFieldData, [e.target.name]: e.target.value})
+    }
+
+    const handleCloseModal = () => {
+        setIsOpen(false)
+    }
+
+    const handleOpenModal = (data) => {        
+        setDataModal(data)
+        setIsOpen(true)
+    }
+
     return(
-        <ValidatorForm onSubmit={sendMail}>            
+        <ValidatorForm onSubmit={sendMail} instantValidate={false}>
             <Grid container className={root} justifyContent="center">
                 <Grid item xs={11}>
                     <Grid container justifyContent="center" spacing={3} >
@@ -96,27 +126,21 @@ function Contact(){
                     </Grid>
                     <Paper className={mailContainer} elevation={3}>
                         <Grid container justifyContent="center" spacing={4}>
-                            <Grid item xs={12} sm={4}>
-                                <TextValidator
-                                    fullWidth
-                                    name="subject"
-                                    label={t("contactMailSubject")}
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <TextValidator
-                                    fullWidth
-                                    name="name"
-                                    label={t("contactMailName")}
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <TextValidator
-                                    fullWidth
-                                    name="email"
-                                    label={t("contactMailEmail")}
-                                />
-                            </Grid>
+                            { textFiledData.map(({name, label, validators, errorMessages}, key) =>  {
+                                return (
+                                    <Grid item xs={12} sm={4} key={key}>
+                                        <TextValidator
+                                            fullWidth
+                                            name={name}
+                                            onChange={onChangeInputs}
+                                            value={textFieldData[name]}
+                                            label={t(label)}
+                                            validators={validators}
+                                            errorMessages={errorMessages}
+                                        />
+                                    </Grid>
+                                );
+                            })}                           
                             <Grid item xs={12}>
                                 <TextareaAutosize
                                     className={textBox}                                    
@@ -136,6 +160,13 @@ function Contact(){
                         </Grid>
                     </Paper>
                 </Grid>
+                <ModalAfterMail
+                    open={isOpen}
+                    icon={dataModal.iconModal}
+                    title={dataModal.titleModal}
+                    subtitle={dataModal.subtitleModal}
+                    handleClose={handleCloseModal}
+                />
             </Grid>
         </ValidatorForm>
     );

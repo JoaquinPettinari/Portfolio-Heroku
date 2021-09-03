@@ -26,6 +26,14 @@ const translateEn = {
     'contactMailEmail': 'Email',
     'contactMailMessage': 'Message',
     'contactMailSendMessage': 'Send Message',
+    //MODAL
+    'contactModalErrorTitle':'Ooops!',
+    'contactModalErrorSubtitle':'An unexpected error has occurred.<br /> Please try again later.<br /> Contact me by email if the error persists.',
+    'contactModalSuccessTitle':'Thanks you!!',
+    'contactModalSuccessSubtitle':'I will be answer you as soon as posible!',
+    //ERRORS
+    'textFieldMailRequired':'This field is required',
+    'textFieldMailErrorMail': 'Email invalid',
 }
 
 export default translateEn

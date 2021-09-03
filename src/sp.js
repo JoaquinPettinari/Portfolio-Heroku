@@ -25,6 +25,14 @@ const translateSp = {
     'contactMailEmail': 'Email',
     'contactMailMessage': 'Mensaje',
     'contactMailSendMessage': 'Enviar mensaje',
+    //MODAL
+    'contactModalErrorTitle':'¡Ups!',
+    'contactModalErrorSubtitle':'Ha ocurrido un error inesperado. <br /> Por favor intente nuevamente mas tarde.<br /> Contacteme por mail si el error continua. ',
+    'contactModalSuccessTitle':'¡¡Gracias!!',
+    'contactModalSuccessSubtitle':'Voy a responderte lo antes posible.',
+    //ERRORES
+    'textFieldMailRequired':'Este campo es requerido',
+    'textFieldMailErrorMail': 'Email inválido',
 
 
 }

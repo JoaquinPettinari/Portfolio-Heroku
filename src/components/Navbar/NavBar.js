@@ -46,14 +46,14 @@ import { useScrollSection } from "react-scroll-section";
     }
   }));
   
-  export default function NavBar({ onClickSectionButtons }) {
+  export default function NavBar() {
     const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop } = useStyles();
     const { t } = useTranslation()
     const homeSection = useScrollSection('home');
     const aboutSection = useScrollSection('about');
     const jobsSection = useScrollSection('jobs');
     const studysSection = useScrollSection('studys');
-    const contactSection = useScrollSection('contact');  
+    const contactSection = useScrollSection('contact');
   
     const [state, setState] = useState({
       mobileView: false,
@@ -150,9 +150,7 @@ import { useScrollSection } from "react-scroll-section";
       return headersData.map(({ label, section }) => {
         return (
           <Link
-            {...{
-              // component: RouterLink,
-              // to: href,
+            {...{              
               onClick: section.onClick,
               color: "inherit",
               style: { textDecoration: "none" },
@@ -197,9 +195,7 @@ import { useScrollSection } from "react-scroll-section";
           <Button
             {...{
               key: label,
-              color: "inherit",
-              // to: href,
-              // component: RouterLink,
+              color: "inherit",              
               onClick: section.onClick,
               className: `${menuButton} ${menuButtonDesktop}`,
             }}

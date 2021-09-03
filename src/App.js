@@ -5,14 +5,13 @@ import { ScrollingProvider, Section } from 'react-scroll-section'
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 
-
-function App() {  
+function App() {
 
   return (
     <ScrollingProvider>
-      <NavBar />      
+      <NavBar />
       <Section id="home">
-        <Home />      
+        <Home />
       </Section>
       <Section id="about">
         <About />
@@ -29,7 +28,7 @@ function App() {
       </Section>
       <Section id="contact">
         <Contact />
-      </Section>      
+      </Section>
     </ScrollingProvider>
   );
 }

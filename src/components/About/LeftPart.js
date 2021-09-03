@@ -1,7 +1,7 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import { Trans, useTranslation } from "react-i18next";
 import JPButton from "../JPButton";
-
+import CVJoaquin from './JoaquinPettinariCV2021.pdf'
 const useStyles = makeStyles(() => ({
     bold:{        
         fontWeight:'bold',
@@ -32,12 +32,13 @@ function LeftPart(){
                 <Trans components={{ br: <br />}}>
                     {t("aboutMySelf")}
                 </Trans>
-            </Typography>            
-            <JPButton
-                label={t("homeDownloadCV")}
-                capitalize
-                onClick={downloadCV}                           
-            />
+            </Typography>
+            <a href={CVJoaquin} target="_blank" download="Joaquin-Pettinari-CV.pdf">
+                <JPButton
+                    label={t("homeDownloadCV")}
+                    capitalize
+                />
+            </a>
         </>
     )
 }

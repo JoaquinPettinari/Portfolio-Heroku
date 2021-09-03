@@ -6,7 +6,10 @@ import RightPart from "./RightPart";
 
 const useStyles = makeStyles(() => ({    
     root:{
-        height:'100vh'
+        height:'100vh',
+        ['@media (max-width:600px)']: { 
+            height: '125vh'
+        },
     },
     descriptionContainer:{
         textAlign:'end'
@@ -17,14 +20,14 @@ function About() {
     const classes = useStyles()    
 
     return(
-        <Grid container justifyContent="space-evenly" alignContent="center" className={classes.root}>
-            <Grid item xs={12} sm={5} md={4} className={classes.descriptionContainer}>
+        <Grid container justifyContent="center" spacing={4} alignContent="center" className={classes.root}>
+            <Grid item xs={10} sm={5} md={4} className={classes.descriptionContainer}>
                 <LeftPart />
             </Grid>
-            <Grid item xs={12} sm={4} md={3} >
+            <Grid item xs={10} sm={4} md={3} >
                 <CentralPart />
             </Grid>
-            <Grid item xs={12} sm={5} md={3} >
+            <Grid item xs={10} sm={5} md={3} >
                 <RightPart />
             </Grid>
         </Grid>
