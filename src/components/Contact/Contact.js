@@ -10,6 +10,7 @@ import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import JPButton from '../JPButton'
 import emailjs from 'emailjs-com';
 import { MAIL_SERVICE_ID, MAIL_TEMPLATE_ID, MAIL_USER_ID } from "../../constants";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles(() => ({
     root:{        
@@ -30,7 +31,8 @@ const useStyles = makeStyles(() => ({
 
 
 function Contact(){
-    const { root, mailContainer, textBox, submitButton } = useStyles();    
+    const { root, mailContainer, textBox, submitButton } = useStyles();
+    const { t } = useTranslation()
     
     const sendMail = (e) => {        
         emailjs.sendForm(MAIL_SERVICE_ID, MAIL_TEMPLATE_ID , e.target, MAIL_USER_ID)
@@ -66,60 +68,60 @@ function Contact(){
                         <Grid item xs={11} sm={5} md={3}>
                             <PaperCustom
                                 icon={<HomeIcon />}
-                                title="Location"
+                                title={t("contactLocation")}
                                 subtitle="Castelar, Buenos Aires"
                                 />
                         </Grid>
                         <Grid item xs={11} sm={5} md={3} >
                             <PaperCustom 
                                 icon={<PhoneEnabledIcon />}
-                                title="Phone"
+                                title={t("contactPhone")}
                                 subtitle="(+54) 11-6151-1893"
                                 />
                         </Grid>
                         <Grid item xs={11} sm={5} md={3} >
                             <PaperCustom
                                 icon={<EmailIcon />}
-                                title="Email"
+                                title={t("contactEmail")}
                                 subtitle="joaquinpettinari@hotmail.com"
                                 />
                         </Grid>
                         <Grid item xs={11} sm={5} md={3} >
                             <PaperCustom
                                 icon={<AlternateEmailIcon />} 
-                                title="Social media"
+                                title={t("contactSocialMedia")}
                                 subtitle={getSubtitleInSocialMedia()}
                                 />
                         </Grid>
                     </Grid>
-                    <Paper className={mailContainer}>
+                    <Paper className={mailContainer} elevation={3}>
                         <Grid container justifyContent="center" spacing={4}>
                             <Grid item xs={12} sm={4}>
                                 <TextValidator
                                     fullWidth
                                     name="subject"
-                                    label="Subject"
+                                    label={t("contactMailSubject")}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={4}>
                                 <TextValidator
                                     fullWidth
                                     name="name"
-                                    label="Nombre"
+                                    label={t("contactMailName")}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={4}>
                                 <TextValidator
                                     fullWidth
                                     name="email"
-                                    label="Email"
+                                    label={t("contactMailEmail")}
                                 />
                             </Grid>
                             <Grid item xs={12}>
                                 <TextareaAutosize
                                     className={textBox}                                    
                                     name="message"
-                                    placeholder="Mensaje"
+                                    placeholder={t("contactMailMessage")}
                                     minRows={5}
                                     maxRows={8}
                                 />
@@ -127,7 +129,7 @@ function Contact(){
                         </Grid>
                         <Grid item xs={12} sm={4} md={3} className={submitButton}>
                             <JPButton
-                                label="Send message"
+                                label={t("contactMailSendMessage")}
                                 type="submit"
                                 fullWidth
                             />

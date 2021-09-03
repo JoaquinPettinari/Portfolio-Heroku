@@ -4,10 +4,9 @@ import MyPhoto1 from '../../assets/me1.jpeg'
 import MyPhoto2 from '../../assets/me2.png'
 import MyPhoto3 from '../../assets/me3.png'
 
-const useStyles = makeStyles(() => ({
-    photos:{
-        width: '300px',
-        height: '340px'
+const useStyles = makeStyles(({theme}) => ({
+    photos:{        
+        height: '300px',        
     }
 }))
 
