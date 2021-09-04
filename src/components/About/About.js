@@ -4,30 +4,34 @@ import LeftPart from "./LeftPart";
 import CentralPart from "./CentralPart";
 import RightPart from "./RightPart";
 
-const useStyles = makeStyles(() => ({    
+const useStyles = makeStyles(({theme}) => ({    
     root:{
-        height:'100vh',
-        ['@media (max-width:600px)']: { 
-            height: '125vh'
+        height:'130vh',
+        ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
+            height: 'auto',
+            margin: '50px 0'
         },
     },
     descriptionContainer:{
-        textAlign:'end'
-    },  
+        textAlign:'end',        
+        ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
+            textAlign:'start'
+        }
+    },
 }))
 
 function About() {
-    const classes = useStyles()    
+    const { root, descriptionContainer } = useStyles()
 
     return(
-        <Grid container justifyContent="center" spacing={4} alignContent="center" className={classes.root}>
-            <Grid item xs={10} sm={5} md={4} className={classes.descriptionContainer}>
+        <Grid container justifyContent="center" spacing={2} alignContent="center" className={root}>
+            <Grid item xs={8} sm={6} md={4} className={descriptionContainer}>
                 <LeftPart />
             </Grid>
-            <Grid item xs={10} sm={4} md={3} >
+            <Grid item xs={8} sm={4} md={3} >
                 <CentralPart />
             </Grid>
-            <Grid item xs={10} sm={5} md={3} >
+            <Grid item xs={8} sm={5} md={3} >
                 <RightPart />
             </Grid>
         </Grid>

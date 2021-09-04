@@ -11,11 +11,11 @@ const translateEn = {
     'homeWelcome': 'Welcome!',
     'homeDownloadCV': 'Download CV',
     //ABOUT
-    'aboutProfession': 'Frontend development',
-    'aboutMySelf': `Me fasciné con la programación desde el día uno en la universidad. <br />
-        <br /> En agosto del 2021 me recibí de Técnico universitario en Informática y actualmente estoy cursando las últimas materias de la Licenciatura en Informática. <br />
-        <br /> Entré al mundo laboral en Octubre del 2020
-
+    'aboutProfession': 'Frontend developer',
+    'aboutMySelf': `Technology always fascinated me. <br />
+        I started university without any prior knowledge of programming and from day one I knew I wanted to dedicate myself to this.  <br /> <br />
+        I started studying self-taught to dedicate myself to web development. I started with the basics of HTML, CSS and JavaScript until I had my first course with React technology. <br /> <br />
+        Today I keep my learning process active and I would like to find a job with relocation possibilities.
     `,
     //CONTACT
     'contactLocation':'Location',
@@ -35,6 +35,11 @@ const translateEn = {
     //ERRORS
     'textFieldMailRequired':'This field is required',
     'textFieldMailErrorMail': 'Email invalid',
+    //JOBS
+    'firstJobPosition':'Full Stack Developer',
+    'firstJobDate':'Octuber / 2020 - May / 2021',
+    'secondJobPosition': 'Web Developer',
+    'secondJobDate': 'May / 2021 - Actually'
 }
 
 export default translateEn

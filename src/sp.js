@@ -12,9 +12,10 @@ const translateSp = {
     'homeDownloadCV': 'Descargar CV',
     //ABOUT
     'aboutProfession': 'Desarrollador frontend',
-    'aboutMySelf': `Me fasciné con la programación desde el día uno en la universidad. <br />
-        En agosto del 2021 me recibí de Técnico universitario en Informática y actualmente estoy cursando las últimas materias de la Licenciatura en Informática. 
-
+    'aboutMySelf': `La tecnología siempre me fascinó. <br />
+        Inicié la universidad sin ningún conocimiento previo de programación y desde el día uno supe que quería dedicarme a esto. <br /> <br />
+        Empecé a estudiar de manera autodidacta para dedicarme al desarrollo web. Comencé con lo básico de HTML, CSS y JavaScript hasta que tuve la primer materia con la tecnología React. <br /> <br />
+        Hoy en día mantengo mi proceso de aprendizaje activo y me gustaría encontrar un trabajo con posibilidades de relocación.
     `,
     //CONTACT    
     'contactLocation':'Ubicación',
@@ -34,7 +35,11 @@ const translateSp = {
     //ERRORES
     'textFieldMailRequired':'Este campo es requerido',
     'textFieldMailErrorMail': 'Email inválido',
-
+    //JOBS
+    'firstJobPosition':'Desarrollador Full Stack',
+    'firstJobDate':'Octubre / 2020 - Mayo / 2021',
+    'secondJobPosition': 'Desarrollador Web',
+    'secondJobDate': 'Mayo / 2021 - Actualidad'
 
 }
 

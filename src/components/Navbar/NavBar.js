@@ -7,9 +7,8 @@ import {
     IconButton,
     Drawer,
     Link,
-    MenuItem,
-    FormControl,
-    Select,
+    MenuItem,  
+    ButtonGroup,
   } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
@@ -43,11 +42,14 @@ import { useScrollSection } from "react-scroll-section";
     menuButtonDesktop:{
       fontWeight:'bold',
       fontSize:'1em'
+    },
+    isLanguageSelected:{
+      border:'0.5px solid white !important' 
     }
   }));
   
   export default function NavBar() {
-    const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop } = useStyles();
+    const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop, isLanguageSelected } = useStyles();
     const { t } = useTranslation()
     const homeSection = useScrollSection('home');
     const aboutSection = useScrollSection('about');
@@ -60,6 +62,7 @@ import { useScrollSection } from "react-scroll-section";
       mobileView: false,
       drawerOpen: false,
     });
+    const [languageSelected, setLanguageSelected] = useState("en")
   
     const { mobileView, drawerOpen } = state;
 
@@ -170,23 +173,19 @@ import { useScrollSection } from "react-scroll-section";
 
     const getLanguageInput = () => {
         return (
-            <FormControl>                
-                <Select
-                value={i18n.language}
-                onChange={handleChangeLanguage}                
-                displayEmpty
-                disableUnderline
-                >
-                  <MenuItem value="en"><img src={englandImage} alt="Spain Icon" /></MenuItem>
-                  <MenuItem value="sp"><img src={spainImage} alt="British Icon" /></MenuItem>
-                </Select>
-            </FormControl>
+          <ButtonGroup disableElevation variant="contained" color="primary" >            
+            <Button className={languageSelected === "en" && isLanguageSelected} onClick={() => handleChangeLanguage("en")} ><img src={englandImage} alt="British Icon" /></Button>
+            <Button className={languageSelected === "sp" && isLanguageSelected} onClick={() => handleChangeLanguage("sp")} ><img src={spainImage} alt="Spain Icon" /></Button>
+          </ButtonGroup>
         )
     }
 
-    const handleChangeLanguage = (event) => {    
-        i18n.changeLanguage(event.target.value);        
-      };
+    const handleChangeLanguage = (value) => {
+      if(value !== languageSelected){
+        setLanguageSelected(value);
+        i18n.changeLanguage(value);
+      }
+    };
   
     const joaquinPettinariLogo = (
       <Typography variant="h6" component="h1" className={logo}>

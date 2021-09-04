@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 import { Trans, useTranslation } from "react-i18next";
 import JPButton from "../ui/JPButton";
 import CVJoaquin from './JoaquinPettinariCV2021.pdf'
@@ -8,38 +8,39 @@ const useStyles = makeStyles(() => ({
     },
     aboutMySelf:{
         lineHeight: '1',
-    },    
+    },
+    marginTop:{
+        marginTop:'20px'
+    }
 }))
 
 function LeftPart(){
     const { t } = useTranslation()
-    const { bold, aboutMySelf } = useStyles()
-
-    const downloadCV = () => {
-        window.open("https://drive.google.com/file/d/1c0Uk-cYi5Ghe-C2G9kfqDwvphclwwU99/view?usp=sharing", "_blank")
-    }
+    const { bold, aboutMySelf, marginTop } = useStyles()   
 
     return(
         <>
             <Typography variant="h5" className={bold}>
                 Joaquín Salvador Pettinari
             </Typography>
-            <Typography variant="subtitle2" className={bold}>
+            <Typography variant="h6" >
                 {t("aboutProfession")}
             </Typography>            
-            <Typography variant="subtitle1" className={`${aboutMySelf} ${bold}`} >
+            <Typography variant="subtitle2" className={`${aboutMySelf} ${bold}`} >
                 <br />
                 <Trans components={{ br: <br />}}>
                     {t("aboutMySelf")}
                 </Trans>
-            </Typography>          
-            <JPButton
-                label={t("homeDownloadCV")}
-                capitalize
-                href={CVJoaquin}
-                target="_blank"
-                download="Joaquin-Pettinari-CV.pdf"
-            />
+            </Typography>
+            <Grid className={marginTop} >
+                <JPButton
+                    label={t("homeDownloadCV")}
+                    capitalize
+                    href={CVJoaquin}
+                    target="_blank"
+                    download="Joaquin-Pettinari-CV.pdf"
+                    />
+            </Grid>
         </>
     )
 }

@@ -2,12 +2,12 @@ import { Grid, makeStyles, Typography } from '@material-ui/core'
 import LinearSkillWithTitle from './LinearSkillWithTitle'
 
 const knowledge = [
-    { name: 'React JS', level: 80, },
     { name: 'JavaScript', level: 80, },
+    { name: 'React JS', level: 80, },
     { name: 'Material UI', level: 75, },
     { name: 'Redux', level: 75, },
-    { name: 'NodeJS', level: 70, },
-    { name: 'MongoDB', level: 70, },
+    { name: 'NodeJS', level: 65, },
+    { name: 'MongoDB', level: 60, },
     { name: 'Git', level: 80, },
     { name: 'Scrum - Kanban', level: 70, },
 ]
