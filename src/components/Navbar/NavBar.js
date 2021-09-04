@@ -54,6 +54,7 @@ import { useScrollSection } from "react-scroll-section";
     const jobsSection = useScrollSection('jobs');
     const studysSection = useScrollSection('studys');
     const contactSection = useScrollSection('contact');
+    const proyectsSection = useScrollSection('proyects');    
   
     const [state, setState] = useState({
       mobileView: false,
@@ -80,9 +81,13 @@ import { useScrollSection } from "react-scroll-section";
             section: studysSection,
         },
         {
+            label: t("buttonProyects"),
+            section: proyectsSection
+        },
+        {
             label: t("buttonContact"),
             section: contactSection
-        }
+        },
     ];
   
     useEffect(() => {

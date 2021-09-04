@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
         padding:'1em',        
         borderRadius:'0.5em',
         fontWeight:'bold',
-        fontSize:'1em'
+        fontSize:'1em',
     },
     capitalize:{
         textTransform:'none'

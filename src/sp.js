@@ -5,6 +5,7 @@ const translateSp = {
     'buttonJobs': 'Trabajos',
     'buttonStudys': 'Estudios',
     'buttonContact': 'Contacto',
+    'buttonProyects': 'Proyectos',
     //HOME
     'homeContactMeButton': 'Contactame',
     'homeWelcome': '¡Bienvenido!',

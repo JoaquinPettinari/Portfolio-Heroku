@@ -2,7 +2,10 @@ import { Grid, makeStyles, Typography } from "@material-ui/core"
 import { useTranslation } from "react-i18next"
 import { useScrollSection } from "react-scroll-section"
 import HomeBackground from '../../assets/homeBackground.jpg'
-import JPButton from "../JPButton"
+import JPButton from "../ui/JPButton"
+import LessIcon from "../../assets/lotties/>Icon.json"
+import Lottie from "react-lottie"
+import { defaultOptions } from "../../lottieConfig"
 
 
 const useStyles = makeStyles(() => ({
@@ -18,9 +21,11 @@ const useStyles = makeStyles(() => ({
         textAlign: 'center',
     },    
     welcomeText:{
-        fontSize:'3vw',
+        fontSize:'3.5vw',
         color:'#ffffff',
-        fontWeight:'bold'
+        fontWeight:'bold',
+        display:'inline-flex',
+        alignItems:'center'
     }
 }))
 
@@ -33,8 +38,9 @@ function Home() {
     return(    
         <Grid container className={classes.root} justifyContent="center" alignContent="center">
             <Grid item xs={12}>
-                <Typography className={classes.welcomeText} variant="h2">
-                    {t("homeWelcome")}
+                <Typography className={classes.welcomeText} variant="h1">
+                    {"<JoaquinPettinari /"}
+                    <Lottie options={{animationData: LessIcon, ...defaultOptions}} width={60} height={60}  />
                 </Typography>
             </Grid>
             <Grid item xs={5} sm={3} md={2}>

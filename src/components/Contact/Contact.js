@@ -7,7 +7,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
-import JPButton from '../JPButton'
+import JPButton from '../ui/JPButton'
 import emailjs from 'emailjs-com';
 import { MAIL_SERVICE_ID, MAIL_TEMPLATE_ID, MAIL_USER_ID } from "../../constants";
 import { useTranslation } from "react-i18next";
@@ -15,10 +15,11 @@ import { useState } from "react";
 import ModalAfterMail from "./ModalAfterMail";
 import ErrorIconLottie from '../../assets/lotties/errorMail.json'
 import SuccessMail from '../../assets/lotties/successMail.json'
+import TitleText from "../ui/TitleText";
 
 const useStyles = makeStyles(() => ({
     root:{        
-        minHeight:'50vh',
+        minHeight:'80vh',
     },
     mailContainer:{
         marginTop:'50px',
@@ -93,6 +94,9 @@ function Contact(){
     return(
         <ValidatorForm onSubmit={sendMail} instantValidate={false}>
             <Grid container className={root} justifyContent="center">
+                <Grid item xs={8} sm={4} md={3} >
+                    <TitleText label="Contact" />
+                </Grid>
                 <Grid item xs={11}>
                     <Grid container justifyContent="center" spacing={3} >
                         <Grid item xs={11} sm={5} md={3}>

@@ -5,6 +5,7 @@ const translateEn = {
     'buttonJobs': 'Jobs',
     'buttonStudys': 'Studys',
     'buttonContact': 'Contact',
+    'buttonProyects': 'Proyects',
     //HOME
     'homeContactMeButton': 'Contact me',
     'homeWelcome': 'Welcome!',
@@ -12,8 +13,8 @@ const translateEn = {
     //ABOUT
     'aboutProfession': 'Frontend development',
     'aboutMySelf': `Me fasciné con la programación desde el día uno en la universidad. <br />
-        En agosto del 2021 me recibí de Técnico universitario en Informática y actualmente estoy cursando las últimas materias de la Licenciatura en Informática. <br />
-        Entré al mundo laboral en Octubre del 2020
+        <br /> En agosto del 2021 me recibí de Técnico universitario en Informática y actualmente estoy cursando las últimas materias de la Licenciatura en Informática. <br />
+        <br /> Entré al mundo laboral en Octubre del 2020
 
     `,
     //CONTACT
