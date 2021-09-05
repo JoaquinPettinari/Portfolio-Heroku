@@ -43,6 +43,13 @@ const translateEn = {
     'firstJobDate':'Octuber / 2020 - May / 2021',
     'secondJobPosition': 'Web Developer',
     'secondJobDate': 'May / 2021 - Actually',
+    //STUDYS
+    'studyUniversity': 'Hurlingham National University',
+    'studyFirstTitleName':'Degree in computer science',
+    'studyFirstDate': 'August 2018 - Actually',
+    'studySecondTitleName':'University Technician in Computer Science',
+    'studySecondDate': 'August 2018 - August 2021',
+    'studyAverage':'Average: ',
     //PROYECT
     'proyectDescription': 'Shift management page to organize access to the university in compliance with health protocols.',
     'proyectRepository':'Repository',
