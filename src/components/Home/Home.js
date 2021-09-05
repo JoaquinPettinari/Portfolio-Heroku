@@ -1,5 +1,5 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core"
-import { useTranslation } from "react-i18next"
+import { useTranslate as t } from '../../translation';
 import { useScrollSection } from "react-scroll-section"
 import HomeBackground from '../../assets/homeBackground.jpg'
 import JPButton from "../ui/JPButton"
@@ -30,8 +30,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 function Home() {
-    const classes = useStyles()
-    const { t } = useTranslation()
+    const classes = useStyles()    
     const contactSection = useScrollSection('contact');
     
 

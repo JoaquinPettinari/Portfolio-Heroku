@@ -10,7 +10,7 @@ import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import JPButton from '../ui/JPButton'
 import emailjs from 'emailjs-com';
 import { MAIL_SERVICE_ID, MAIL_TEMPLATE_ID, MAIL_USER_ID } from "../../constants";
-import { useTranslation } from "react-i18next";
+import { useTranslate as t } from '../../translation';
 import { useState } from "react";
 import ModalAfterMail from "./ModalAfterMail";
 import ErrorIconLottie from '../../assets/lotties/errorMail.json'
@@ -40,7 +40,6 @@ function Contact(){
     const [ dataModal, setDataModal ] = useState({iconModal: '', titleModal:'', subtitleModal:'' });
     const [ textFieldData, setTextFieldData ] = useState('')
     const [ isOpen, setIsOpen ] = useState(false);
-    const { t } = useTranslation();
 
     const textFiledData = [
         { name: 'subject', label: "contactMailSubject", validators: ['required'], errorMessages:[t("textFieldMailRequired")] },

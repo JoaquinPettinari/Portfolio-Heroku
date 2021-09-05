@@ -7,7 +7,7 @@ import { defaultOptions } from "../../lottieConfig";
 import WorkIcon from '@material-ui/icons/Work';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import CodeIcon from '@material-ui/icons/Code';
-import { useTranslation } from "react-i18next";
+import { useTranslate as t } from '../../translation';
 
 const useStyles = makeStyles(() => ({
     root:{        
@@ -41,8 +41,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 function Jobs(){
-    const { root, root2, containerDescription, divTitleJob, titleJobs, iconWidth, compañyTextStyle, dividerStyle} = useStyles()
-    const { t } = useTranslation()  
+    const { root, root2, containerDescription, divTitleJob, titleJobs, iconWidth, compañyTextStyle, dividerStyle} = useStyles()    
 
     return(
         <Grid container className={root} justifyContent="center" id="MyContainerId">

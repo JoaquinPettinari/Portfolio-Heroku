@@ -12,8 +12,7 @@ import {
   } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from '../../translation';
+import { i18n, useTranslate as t } from '../../translation';
 import spainImage from '../../assets/spain.png'
 import englandImage from '../../assets/england.png'
 import { useScrollSection } from "react-scroll-section";
@@ -49,8 +48,7 @@ import { useScrollSection } from "react-scroll-section";
   }));
   
   export default function NavBar() {
-    const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop, isLanguageSelected } = useStyles();
-    const { t } = useTranslation()
+    const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop, isLanguageSelected } = useStyles();    
     const homeSection = useScrollSection('home');
     const aboutSection = useScrollSection('about');
     const jobsSection = useScrollSection('jobs');

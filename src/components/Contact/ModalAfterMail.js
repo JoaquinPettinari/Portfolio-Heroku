@@ -1,7 +1,8 @@
 import { Dialog, Grid, makeStyles, Typography } from "@material-ui/core"
-import { Trans, useTranslation } from "react-i18next";
+import { Trans } from "react-i18next";
 import Lottie from "react-lottie"
 import { defaultOptions } from "../../lottieConfig"
+import { useTranslate as t } from '../../translation';
 
 const useStyles = makeStyles(() => ({
     modal: {
@@ -15,8 +16,7 @@ const useStyles = makeStyles(() => ({
 
 function ModalAfterMail(props){
     const { open, handleClose, icon, title, subtitle} = props;
-    const { modal, subtitleStyle} = useStyles();
-    const { t } = useTranslation()
+    const { modal, subtitleStyle} = useStyles();    
 
     return(
         <Dialog
