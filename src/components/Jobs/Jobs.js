@@ -1,7 +1,7 @@
 import { Divider, Grid, makeStyles, Typography } from "@material-ui/core";
 import TitleText from "../ui/TitleText";
 import Pointer from "../../assets/lotties/pointer.json"
-import JobsIcon2 from "../../assets/lotties/work.json"
+import Working from "../../assets/lotties/working.json"
 import Lottie from "react-lottie";
 import { defaultOptions } from "../../lottieConfig";
 import WorkIcon from '@material-ui/icons/Work';
@@ -9,16 +9,16 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 import CodeIcon from '@material-ui/icons/Code';
 import { useTranslation } from "react-i18next";
 
-
 const useStyles = makeStyles(() => ({
     root:{        
         background: '#eeeeee'
     },
     root2:{
-        minHeight:'60vh',
+        minHeight:'95vh',
     },    
     containerDescription:{
-        alignContent:'center'
+        alignContent:'center',
+        display:'grid'        
     },
     divTitleJob:{
         display:'inline-flex',
@@ -42,21 +42,22 @@ const useStyles = makeStyles(() => ({
 
 function Jobs(){
     const { root, root2, containerDescription, divTitleJob, titleJobs, iconWidth, compañyTextStyle, dividerStyle} = useStyles()
-    const { t } = useTranslation()    
+    const { t } = useTranslation()  
 
     return(
-        <Grid container className={root} justifyContent="center" >
-            <Grid item xs={8} sm={4} md={3} >
+        <Grid container className={root} justifyContent="center" id="MyContainerId">
+            <Grid item xs={8} sm={4} md={3} >                
                 <TitleText label="Jobs" />
             </Grid>
             <Grid container spacing={5} className={root2} alignContent="center" justifyContent="center">
-                <Grid item xs={10} sm={6}>
-                    <Lottie options={{animationData: JobsIcon2, ...defaultOptions}}  />
+                <Grid item xs={8} sm={6}>
+                    {/* <Lottie options={{animationData: JobsIcon2, ...defaultOptions}}  /> */}
+                    <Lottie options={{animationData: Working, ...defaultOptions}} />
                 </Grid>
-                <Grid item xs={10} sm={6} className={containerDescription}>
+                <Grid item xs={8} sm={6} className={containerDescription}>
                     { listOfJobs.map(({ positionName, positionDate, positionCompanyName, positionStack }, index ) => {
                             return (
-                                <Grid container spacing={1} key={index}>                                
+                                <Grid container spacing={1} key={index}>
                                     <Grid item xs={12} className={divTitleJob} >
                                         <Lottie options={{animationData: Pointer, ...defaultOptions}} width={50} height={50} style={{ margin:0}}/>
                                         <Typography variant="h5" className={titleJobs} >
@@ -84,7 +85,6 @@ function Jobs(){
                                     <Grid item xs={12} sm={6} className={dividerStyle} >
                                         {index !== listOfJobs.length - 1 && <Divider color="primary"  /> }
                                     </Grid>
-
                                 </Grid>
                             )
                         })

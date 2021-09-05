@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Jobs from './components/Jobs/Jobs';
 import Proyects from './components/Proyects/Proyects';
+import Studys from './components/Studys/Studys';
 
 function App() {
 
@@ -16,13 +17,13 @@ function App() {
         <Home />
       </Section>
       <Section id="about">
-        <About />    
+        <About />
       </Section>
       <Section id="jobs">
         <Jobs />
       </Section>
       <Section id="studys">
-        <Proyects />
+        <Studys />
       </Section>
       <Section id="proyects">
         <Proyects />

@@ -16,6 +16,7 @@ import ModalAfterMail from "./ModalAfterMail";
 import ErrorIconLottie from '../../assets/lotties/errorMail.json'
 import SuccessMail from '../../assets/lotties/successMail.json'
 import TitleText from "../ui/TitleText";
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const useStyles = makeStyles(() => ({
     root:{        
@@ -69,11 +70,16 @@ function Contact(){
         window.open("https://www.instagram.com/joacoopettinari/", "_blank")
     }
 
+    const goToGithub = () => {
+        window.open("https://github.com/JoaquinPettinari", "_blank")
+    }
+
     const getSubtitleInSocialMedia = () => {
         return(
             <>
                 <LinkedInIcon onClick={goToLinkedin} />
                 <InstagramIcon onClick={goToInstagram} />
+                <GitHubIcon onClick={goToGithub} />
             </>
         )
     }
