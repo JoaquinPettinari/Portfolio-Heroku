@@ -21,12 +21,12 @@ function Proyects(){
         <Layout
             title="buttonProyects"
             lottieIcon={ProyectIcon}
-            background="true"
+            background={true}
         >
             {
                 listOfProyects.map(({ image, alt, proyectDescription,proyectRepository, proyectPage, proyectRepositoryValue, proyectPageValue}, index) => {
                     return(
-                        <Grid container spacing={3} alignContent="center">
+                        <Grid container spacing={3} alignContent="center" key={index} >
                             <Grid item xs={12}>
                                 <Grid item xs={8} sm={6} md={4}>
                                     <img src={image} alt={alt}  />

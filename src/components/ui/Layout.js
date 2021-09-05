@@ -5,7 +5,7 @@ import { defaultOptions } from "../../lottieConfig";
 import { useTranslate as t } from '../../translation';
 
 const useStyles = makeStyles(() => ({
-    root:{
+    root:{        
         background: '#eeeeee'
     },
     root2:{
@@ -23,7 +23,7 @@ function Layout(props){
 
     return(
         <Grid container className={background && root} justifyContent="center" id="MyContainerId">
-            <Grid item xs={8} sm={4} md={3} >
+            <Grid item xs={8} sm={4} md={3} >                
                 <TitleText label={t(title)} />
             </Grid>
             <Grid container spacing={5} className={minHeightStyle && root2} alignContent="center" justifyContent="center">

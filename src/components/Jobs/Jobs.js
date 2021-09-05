@@ -37,7 +37,7 @@ function Jobs(){
         <Layout
             title="buttonJobs"
             lottieIcon={Working}
-            background="true"
+            background={true}
             minHeightStyle="true"
         > 
             { listOfJobs.map(({ positionName, positionDate, positionCompanyName, positionStack }, index ) => {
@@ -52,7 +52,7 @@ function Jobs(){
                             <Grid item xs={12} className={divTitleJob}>
                                 <WorkIcon className={iconWidth} />
                                 <Typography variant="h6" className={compañyTextStyle}>
-                                    {positionCompanyName}
+                                    {t(positionCompanyName)}
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} className={divTitleJob}>
@@ -64,7 +64,7 @@ function Jobs(){
                             <Grid item xs={12} className={divTitleJob}>
                                 <CodeIcon className={iconWidth} />
                                 <Typography variant="subtitle1" className={compañyTextStyle}>
-                                    {positionStack}
+                                    {t(positionStack)}
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} sm={6} className={dividerStyle} >
@@ -79,8 +79,9 @@ function Jobs(){
 }
 
 const listOfJobs = [
-    { positionName: "secondJobPosition", positionDate: "secondJobDate", positionCompanyName: 'Swiss Medical Group', positionStack:'React - Redux' },
-    { positionName: "firstJobPosition", positionDate: "firstJobDate", positionCompanyName: 'Botmaker', positionStack:'React - Java' },
+    { positionName: "secondJobPosition", positionDate: "secondJobDate", positionCompanyName: 'swissMedicalGroup', positionStack:'react-Redux' },
+    { positionName: "thridJobPosition", positionDate: "thridJobDate", positionCompanyName: 'studyUniversity', positionStack: 'objectProgramming' },
+    { positionName: "firstJobPosition", positionDate: "firstJobDate", positionCompanyName: 'botmaker', positionStack:'react-Java' },
 ]
 
 export default Jobs;

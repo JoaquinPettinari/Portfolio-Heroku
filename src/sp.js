@@ -43,6 +43,13 @@ const translateSp = {
     'firstJobDate':'Octubre / 2020 - Mayo / 2021',
     'secondJobPosition': 'Desarrollador Web',
     'secondJobDate': 'Mayo / 2021 - Actualidad',
+    'thridJobPosition':'Ayudante de cátedra',
+    'thridJobDate':'Agosto 2019 - Actualidad',
+    'objectProgramming': 'Programación con Objetos 1',
+    'swissMedicalGroup':'Swiss Medical Group',
+    'botmaker':'Botmaker',
+    'react-Redux':'React - Redux',
+    'react-Java':'React - Java',
     //STUDYS
     'studyUniversity': 'Universidad Nacional de Hurlingham',
     'studyFirstTitleName':'Licenciatura en Informática',

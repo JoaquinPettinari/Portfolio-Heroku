@@ -34,7 +34,7 @@ function Footer(){
                     @2021
                 </Typography>
                 <Typography variant="subtitle1" className={marginLeftText}>                    
-                    <a href="https://github.com/JoaquinPettinari/Portfolio-Joaquin-Pettinari" target="_blank" rel="noreferrer" textColor><div className={textColor} >{t("footer")}</div></a>
+                    <a href="https://github.com/JoaquinPettinari/Portfolio-Joaquin-Pettinari" target="_blank" rel="noreferrer"><div className={textColor} >{t("footer")}</div></a>
                 </Typography>
             </Grid>
         </Grid>

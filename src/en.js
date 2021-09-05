@@ -43,6 +43,13 @@ const translateEn = {
     'firstJobDate':'Octuber / 2020 - May / 2021',
     'secondJobPosition': 'Web Developer',
     'secondJobDate': 'May / 2021 - Actually',
+    'thridJobPosition':'Assistant Professor',
+    'thridJobDate':'August 2019 - Actually',
+    'objectProgramming': 'Object Programming 1',
+    'swissMedicalGroup':'Swiss Medical Group',
+    'botmaker':'Botmaker',
+    'react-Redux':'React - Redux',
+    'react-Java':'React - Java',
     //STUDYS
     'studyUniversity': 'Hurlingham National University',
     'studyFirstTitleName':'Degree in computer science',
