@@ -7,6 +7,7 @@ import Contact from './components/Contact/Contact';
 import Jobs from './components/Jobs/Jobs';
 import Proyects from './components/Proyects/Proyects';
 import Studys from './components/Studys/Studys';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
       <Section id="contact">
         <Contact />
       </Section>
+      <Footer />
     </ScrollingProvider>
   );
 }

@@ -54,6 +54,7 @@ const translateEn = {
     'proyectFirstDescription': 'Shift management page to organize access to the university in compliance with health protocols.',
     'proyectFirstRepository':'Repository',
     'proyectFirstPage': 'Page',
+    'footer':'Source code',
 }
 
 export default translateEn
