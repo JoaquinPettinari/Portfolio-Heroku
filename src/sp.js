@@ -54,6 +54,8 @@ const translateSp = {
     'proyectFirstDescription': 'Página gestora de turnos para organizar el acceso a la universidad cumpliendo con los protocolos sanitarios.',
     'proyectFirstRepository':'Repositorio',
     'proyectFirstPage': 'Página',
+    //FOOTER
+    'footer':'Código fuente',
 
 }
 
