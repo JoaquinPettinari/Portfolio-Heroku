@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Typography } from "@material-ui/core"
+import { Grid, makeStyles, Typography, useMediaQuery } from "@material-ui/core"
 import { useTranslate as t } from '../../translation';
 import { useScrollSection } from "react-scroll-section"
 import HomeBackground from '../../assets/homeBackground.jpg'
@@ -21,17 +21,21 @@ const useStyles = makeStyles(() => ({
         textAlign: 'center',
     },    
     welcomeText:{
-        fontSize:'3.5vw',
+        fontSize:'50px',
         color:'#ffffff',
         fontWeight:'bold',
         display:'inline-flex',
-        alignItems:'center'
+        alignItems:'center',
+        ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
+            fontSize: '40px'
+          }
     }
 }))
 
 function Home() {
     const classes = useStyles()    
     const contactSection = useScrollSection('contact');
+    const matches = useMediaQuery('(min-width:600px)');
     
 
     return(    
@@ -39,7 +43,7 @@ function Home() {
             <Grid item xs={12}>
                 <Typography className={classes.welcomeText} variant="h1">
                     {"<JoaquinPettinari /"}
-                    <Lottie options={{animationData: LessIcon, ...defaultOptions}} width={60} height={60}  />
+                    <Lottie options={{animationData: LessIcon, ...defaultOptions}} width={matches ? 60 : 45} height={ matches ? 60 : 45}  />
                 </Typography>
             </Grid>
             <Grid item xs={5} sm={3} md={2}>
