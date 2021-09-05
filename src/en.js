@@ -51,9 +51,9 @@ const translateEn = {
     'studySecondDate': 'August 2018 - August 2021',
     'studyAverage':'Average: ',
     //PROYECT
-    'proyectDescription': 'Shift management page to organize access to the university in compliance with health protocols.',
-    'proyectRepository':'Repository',
-    'proyectPage': 'Page',
+    'proyectFirstDescription': 'Shift management page to organize access to the university in compliance with health protocols.',
+    'proyectFirstRepository':'Repository',
+    'proyectFirstPage': 'Page',
 }
 
 export default translateEn

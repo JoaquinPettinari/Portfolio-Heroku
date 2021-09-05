@@ -51,9 +51,9 @@ const translateSp = {
     'studySecondDate': 'Agosto 2018 - Agosto 2021',
     'studyAverage':'Promedio: ',
     //PROYECT
-    'proyectDescription': 'Página gestora de turnos para organizar el acceso a la universidad cumpliendo con los protocolos sanitarios.',
-    'proyectRepository':'Repositorio',
-    'proyectPage': 'Página',
+    'proyectFirstDescription': 'Página gestora de turnos para organizar el acceso a la universidad cumpliendo con los protocolos sanitarios.',
+    'proyectFirstRepository':'Repositorio',
+    'proyectFirstPage': 'Página',
 
 }
 
