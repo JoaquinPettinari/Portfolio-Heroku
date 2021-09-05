@@ -100,7 +100,7 @@ function Contact(){
         <ValidatorForm onSubmit={sendMail} instantValidate={false}>
             <Grid container className={root} justifyContent="center">
                 <Grid item xs={8} sm={4} md={3} >
-                    <TitleText label="Contact" />
+                    <TitleText label={t("buttonContact")} />
                 </Grid>
                 <Grid item xs={11}>
                     <Grid container justifyContent="center" spacing={3} >

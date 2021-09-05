@@ -28,7 +28,7 @@ function ModalAfterMail(props){
                 <Grid item xs={12} >
                     <Lottie options={{animationData: icon, ...defaultOptions, loop: false}} width={120} height={120} />
                 </Grid>
-                <Grid xs={12} >
+                <Grid item xs={12} >
                     <Typography variant="h4">{title}</Typography>
                 </Grid>
                 <Grid item xs={9} >

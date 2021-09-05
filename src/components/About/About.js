@@ -11,6 +11,7 @@ import PostmanImage from '../../assets/postmanImage.png'
 import PostgreSQLImage from '../../assets/postgresImage.png'
 import MongoDBImage from '../../assets/mongoDBImage.png'
 import JavaImage from '../../assets/javaImage.png'
+import { useTranslate as t } from '../../translation';
 
 const useStyles = makeStyles(({theme}) => ({    
     root:{
@@ -80,12 +81,12 @@ function About() {
                 <Grid container spacing={3} alignContent="center">
                     <Grid item xs={12} >
                         <Typography variant="h5" className={textBold} >
-                            Skills
+                            {t("aboutSkills")}
                         </Typography>
                     </Grid>
                     <Grid item xs={12} >
-                        <Typography variant="h6" className={textBold} >
-                            My primary skills are...
+                        <Typography variant="h6">
+                            {t("aboutSkillsPrimary")}
                         </Typography>                        
                     </Grid>
                     {
@@ -103,8 +104,8 @@ function About() {
                         })
                     }
                     <Grid item xs={12} >
-                        <Typography variant="h6" className={textBold} >
-                            I am familiar with...
+                        <Typography variant="h6" >
+                            {t("aboutSkillsSecondary")}
                         </Typography>                        
                     </Grid>
                     {

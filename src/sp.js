@@ -17,6 +17,9 @@ const translateSp = {
         Empecé a estudiar de manera autodidacta para dedicarme al desarrollo web. Comencé con lo básico de HTML, CSS y JavaScript hasta que tuve la primer materia con la tecnología React. <br /> <br />
         Hoy en día mantengo mi proceso de aprendizaje activo y me gustaría encontrar un trabajo con posibilidades de relocación.
     `,
+    'aboutSkills':'Tecnologías',
+    'aboutSkillsPrimary':'Mis tecnologías principales son...',
+    'aboutSkillsSecondary':'Estoy familiarizado con...',
     //CONTACT    
     'contactLocation':'Ubicación',
     'contactPhone': 'Teléfono',
@@ -39,7 +42,11 @@ const translateSp = {
     'firstJobPosition':'Desarrollador Full Stack',
     'firstJobDate':'Octubre / 2020 - Mayo / 2021',
     'secondJobPosition': 'Desarrollador Web',
-    'secondJobDate': 'Mayo / 2021 - Actualidad'
+    'secondJobDate': 'Mayo / 2021 - Actualidad',
+    //PROYECT
+    'proyectDescription': 'Página gestora de turnos para organizar el acceso a la universidad cumpliendo con los protocolos sanitarios.',
+    'proyectRepository':'Repositorio',
+    'proyectPage': 'Página',
 
 }
 

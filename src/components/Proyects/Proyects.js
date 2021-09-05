@@ -4,6 +4,7 @@ import { defaultOptions } from "../../lottieConfig";
 import TitleText from "../ui/TitleText";
 import ProyectIcon from '../../assets/lotties/proyect.json'
 import LogoUnahur from '../../assets/isologo.svg'
+import { useTranslate as t } from '../../translation';
 
 const useStyles = makeStyles(() => ({
     root:{        
@@ -20,12 +21,12 @@ const useStyles = makeStyles(() => ({
 
 function Proyects(){
 
-    const { root, titleJobs, containerDescription } = useStyles();
+    const { root, titleJobs, containerDescription } = useStyles();    
 
     return (
         <Grid container justifyContent="center" id="proyectContainer" className={root}>
             <Grid item xs={8} sm={4} md={3} >                
-                <TitleText label="Proyects" />
+                <TitleText label={t("buttonProyects")} />
             </Grid>
             <Grid container spacing={5} alignContent="center" justifyContent="center">
                 <Grid item xs={8} sm={6}>
@@ -40,9 +41,9 @@ function Proyects(){
                         </Grid>
                             <Grid item xs={10}>
                             <Typography variant="h6" className={titleJobs} >
-                                Página gestora de turnos para organizar el acceso a la universidad cumpliendo con los protocolos sanitarios.
-                                <li><a href="https://github.com/unahur-turnos/" rel="noopener noreferrer" target="_blank">Repositorio</a ></li>
-                                <li><a href="https://turnos.unahur.edu.ar/login" rel="noopener noreferrer" target="_blank">Página</a></li>
+                                {t("proyectDescription")}
+                                <li><a href="https://github.com/unahur-turnos/" rel="noopener noreferrer" target="_blank">{t("proyectRepository")}</a ></li>
+                                <li><a href="https://turnos.unahur.edu.ar/login" rel="noopener noreferrer" target="_blank">{t("proyectPage")}</a></li>
                             </Typography>
                         </Grid>
                     </Grid>

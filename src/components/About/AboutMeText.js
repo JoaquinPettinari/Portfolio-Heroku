@@ -35,7 +35,7 @@ function AboutMeText(){
             <Grid className={marginTop} >
                 <JPButton
                     label={t("homeDownloadCV")}
-                    capitalize
+                    capitalize="true"
                     href={CVJoaquin}
                     target="_blank"
                     download="Joaquin-Pettinari-CV.pdf"

@@ -46,7 +46,7 @@ function Jobs(){
     return(
         <Grid container className={root} justifyContent="center" id="MyContainerId">
             <Grid item xs={8} sm={4} md={3} >                
-                <TitleText label="Jobs" />
+                <TitleText label={t("buttonJobs")} />
             </Grid>
             <Grid container spacing={5} className={root2} alignContent="center" justifyContent="center">
                 <Grid item xs={8} sm={6}>
