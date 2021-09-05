@@ -31,12 +31,14 @@ const useStyles = makeStyles(() => ({
     },
     submitButton:{
         marginTop:'20px'
+    },
+    divTitleButton:{
+        marginBottom:'30px'
     }
-
 }))
 
 function Contact(){
-    const { root, mailContainer, textBox, submitButton } = useStyles();
+    const { root, mailContainer, textBox, submitButton, divTitleButton } = useStyles();
     const [ dataModal, setDataModal ] = useState({iconModal: '', titleModal:'', subtitleModal:'' });
     const [ textFieldData, setTextFieldData ] = useState('')
     const [ isOpen, setIsOpen ] = useState(false);
@@ -99,7 +101,7 @@ function Contact(){
     return(
         <ValidatorForm onSubmit={sendMail} instantValidate={false}>
             <Grid container className={root} justifyContent="center">
-                <Grid item xs={8} sm={4} md={3} >
+                <Grid item xs={8} sm={4} md={3} className={divTitleButton}>
                     <TitleText label={t("buttonContact")} />
                 </Grid>
                 <Grid item xs={11}>
