@@ -42,8 +42,8 @@ import { useScrollSection } from "react-scroll-section";
       fontWeight:'bold',
       fontSize:'1em'
     },
-    isLanguageSelected:{
-      border:'0.5px solid white !important' 
+    isLanguageSelected:{      
+      backgroundColor:'#333333'
     }
   }));
   
