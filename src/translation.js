@@ -10,8 +10,8 @@ i18n
       en: { translation: translateEn },
       sp: { translation: translateSp },
     },
-    lng: "en",
-    fallbackLng: "en",
+    lng: navigator.language.includes("es") ? "sp" : "en",
+    fallbackLng: navigator.language.includes("es") ? "sp" : "en",
     interpolation: { escapeValue: false },
   });
 
@@ -19,4 +19,9 @@ const useTranslate = (word) => {
   const { t } = useTranslation();
   return t(word);
 }
-export{ i18n, useTranslate };
+
+const useDefaultLanguage = () => {
+  const language = navigator.language || navigator.userLanguage;
+  return language.includes("es") ? "sp" : "en"
+}
+export{ i18n, useTranslate, useDefaultLanguage };

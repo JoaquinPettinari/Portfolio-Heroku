@@ -12,7 +12,7 @@ import {
   } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
-import { i18n, useTranslate as t } from '../../translation';
+import { i18n, useTranslate as t, useDefaultLanguage } from '../../translation';
 import spainImage from '../../assets/spain.png'
 import englandImage from '../../assets/england.png'
 import { useScrollSection } from "react-scroll-section";
@@ -60,7 +60,7 @@ import { useScrollSection } from "react-scroll-section";
       mobileView: false,
       drawerOpen: false,
     });
-    const [languageSelected, setLanguageSelected] = useState("en")
+    const [languageSelected, setLanguageSelected] = useState(useDefaultLanguage())
   
     const { mobileView, drawerOpen } = state;
 

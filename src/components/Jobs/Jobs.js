@@ -39,7 +39,7 @@ function Jobs(){
             lottieIcon={Working}
             background={true}
             minHeightStyle="true"
-        > 
+        >            
             { listOfJobs.map(({ positionName, positionDate, positionCompanyName, positionStack }, index ) => {
                     return (
                         <Grid container spacing={1} key={index}>
