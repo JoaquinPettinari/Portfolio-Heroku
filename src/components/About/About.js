@@ -24,7 +24,7 @@ const useStyles = makeStyles(({theme}) => ({
     },    
     photos:{
         height: '300px',
-        width:'300px',
+        width:'300px',        
         ['@media (max-width:960px)']: { // eslint-disable-line no-useless-computed-key            
             height:'400px',
             width:'400px'
@@ -42,12 +42,13 @@ const useStyles = makeStyles(({theme}) => ({
         },
     },
     technologysImage:{
+        objectFit:'container',
         width:'5rem',
         height:'5rem',
-        ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key
-            width:'4rem',
-            height:'4rem',
-        },
+        // ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key
+        //     width:'4rem',
+        //     height:'4rem',
+        // },
     },
     paperStyle:{        
         backgroundColor:'#191919',    
@@ -92,7 +93,7 @@ function About() {
                     {
                         primaryTechnologys.map(({Icon, alt}, index) => {
                             return(
-                                <Grid item xs={6} sm={4} md={2} key={index} style={{minHeight:'max-content'}}>
+                                <Grid item xs={6} sm={4} md={3} key={index} style={{minHeight:'max-content'}}>
                                     <Paper className={paperStyle}>
                                         <img src={Icon} alt={alt} className={technologysImage} />
                                         <Typography variant="h6" className={titleTechnology}>
@@ -111,7 +112,7 @@ function About() {
                     {
                         secondaryTechnologys.map(({Icon, alt}, index) => {
                             return(
-                                <Grid item xs={6} sm={4} md={2} key={index} style={{minHeight:'max-content'}}>
+                                <Grid item xs={6} sm={4} md={3} key={index} style={{minHeight:'max-content'}}>
                                     <Paper className={paperStyle}>
                                         <img src={Icon} alt={alt} className={technologysImage} />
                                         <Typography variant="h6" className={titleTechnology}>

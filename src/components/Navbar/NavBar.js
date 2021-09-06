@@ -24,6 +24,9 @@ import { useScrollSection } from "react-scroll-section";
       fontWeight: 600,
       color: "#FFFEFE",
       textAlign: "left",
+      '&:hover':{
+        cursor:'pointer'
+      }
     },
     menuButton: {      
       fontWeight: 700,
@@ -33,14 +36,18 @@ import { useScrollSection } from "react-scroll-section";
     },
     toolbar: {
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "space-between",      
     },
     drawerContainer: {
       padding: "20px 30px",
     },
     menuButtonDesktop:{
       fontWeight:'bold',
-      fontSize:'1em'
+      fontSize:'1em',
+      '&:hover': {
+        background: "#333333",
+        fontSize:'1.1em'
+     },
     },
     isLanguageSelected:{      
       backgroundColor:'#333333'
@@ -186,7 +193,7 @@ import { useScrollSection } from "react-scroll-section";
     };
   
     const joaquinPettinariLogo = (
-      <Typography variant="h6" component="h1" className={logo}>
+      <Typography variant="h6" component="h1" className={logo} onClick={homeSection.onClick}>
         JP
       </Typography>
     );

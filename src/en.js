@@ -19,7 +19,7 @@ const translateEn = {
     `,
     'aboutSkills':'Skills',
     'aboutSkillsPrimary':'My primary skills are...',
-    'aboutSkillsSecondary':'I am familiar with...',
+    'aboutSkillsSecondary':'Other technologies that I have used ...',
     //CONTACT
     'contactLocation':'Location',
     'contactPhone': 'Phone',
@@ -30,6 +30,7 @@ const translateEn = {
     'contactMailEmail': 'Email',
     'contactMailMessage': 'Message',
     'contactMailSendMessage': 'Send Message',
+    'contactLeaveMeYourMessage':'Leave me your message!!',
     //MODAL
     'contactModalErrorTitle':'Ooops!',
     'contactModalErrorSubtitle':'An unexpected error has occurred.<br /> Please try again later.<br /> Contact me by email if the error persists.',

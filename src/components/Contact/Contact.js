@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Paper, TextareaAutosize } from "@material-ui/core";
+import { Grid, makeStyles, Paper, TextareaAutosize, Typography } from "@material-ui/core";
 import PaperCustom from "./PaperCustom";
 import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
 import EmailIcon from '@material-ui/icons/Email';
@@ -34,11 +34,15 @@ const useStyles = makeStyles(() => ({
     },
     divTitleButton:{
         marginBottom:'30px'
+    },
+    bold:{
+        fontWeight:'bold',
+        textAlign:'center'
     }
 }))
 
 function Contact(){
-    const { root, mailContainer, textBox, submitButton, divTitleButton } = useStyles();
+    const { root, mailContainer, textBox, submitButton, divTitleButton, bold } = useStyles();
     const [ dataModal, setDataModal ] = useState({iconModal: '', titleModal:'', subtitleModal:'' });
     const [ textFieldData, setTextFieldData ] = useState('')
     const [ isOpen, setIsOpen ] = useState(false);
@@ -137,6 +141,11 @@ function Contact(){
                     </Grid>
                     <Paper className={mailContainer} elevation={3}>
                         <Grid container justifyContent="center" spacing={4}>
+                            <Grid item xs={12}>
+                                <Typography variant="h5" className={bold} >
+                                    {t("contactLeaveMeYourMessage")}
+                                </Typography>
+                            </Grid>
                             { textFiledData.map(({name, label, validators, errorMessages}, key) =>  {
                                 return (
                                     <Grid item xs={12} sm={4} key={key}>

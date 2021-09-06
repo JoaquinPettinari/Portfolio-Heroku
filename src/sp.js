@@ -19,7 +19,7 @@ const translateSp = {
     `,
     'aboutSkills':'Tecnologías',
     'aboutSkillsPrimary':'Mis tecnologías principales son...',
-    'aboutSkillsSecondary':'Estoy familiarizado con...',
+    'aboutSkillsSecondary':'Otras tecnologias que he utilizado...',
     //CONTACT    
     'contactLocation':'Ubicación',
     'contactPhone': 'Teléfono',
@@ -30,6 +30,7 @@ const translateSp = {
     'contactMailEmail': 'Email',
     'contactMailMessage': 'Mensaje',
     'contactMailSendMessage': 'Enviar mensaje',
+    'contactLeaveMeYourMessage':'¡¡Dejame tu mensaje!!',
     //MODAL
     'contactModalErrorTitle':'¡Ups!',
     'contactModalErrorSubtitle':'Ha ocurrido un error inesperado. <br /> Por favor intente nuevamente mas tarde.<br /> Contacteme por mail si el error continua. ',
