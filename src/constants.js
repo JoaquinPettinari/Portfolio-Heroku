@@ -1,3 +1,3 @@
-export const MAIL_SERVICE_ID = "service_rj5bbt4"
-export const MAIL_TEMPLATE_ID = "template_ldto00w"
-export const MAIL_USER_ID = "user_GygKJGQ3M9zW0kZzDPp8e"
+export const MAIL_SERVICE_ID = process.env.REACT_APP_MAIL_SERVICE_ID
+export const MAIL_TEMPLATE_ID = process.env.REACT_APP_MAIL_TEMPLATE_ID
+export const MAIL_USER_ID = process.env.REACT_APP_MAIL_USER_ID

@@ -50,14 +50,12 @@ const useStyles = makeStyles(({theme}) => ({
         //     height:'4rem',
         // },
     },
-    paperStyle:{        
-        backgroundColor:'#191919',    
+    paperStyle:{
         padding:'13px',
         textAlign:'center',
         borderRadius:'6px'
     },
-    titleTechnology:{
-        color:'white',
+    titleTechnology:{        
         textAlign:'center',
         fontWeight:'bold',
         fontSize:'2vh'

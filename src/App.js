@@ -13,6 +13,7 @@ function App() {
 
   return (
     <ScrollingProvider>
+      {console.log(process.env.REACT_APP_SALUDOS)}
       <NavBar />
       <Section id="home">
         <Home />
