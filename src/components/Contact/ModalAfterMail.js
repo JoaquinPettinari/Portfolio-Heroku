@@ -3,6 +3,7 @@ import { Trans } from "react-i18next";
 import Lottie from "react-lottie"
 import { defaultOptions } from "../../lottieConfig"
 import { useTranslate as t } from '../../translation';
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(() => ({
     modal: {
@@ -41,6 +42,14 @@ function ModalAfterMail(props){
             </Grid>
         </Dialog>
     )
+}
+
+ModalAfterMail.propTypes={
+    open: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    icon: PropTypes.string,
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
 }
 
 export default ModalAfterMail

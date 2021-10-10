@@ -44,7 +44,7 @@ const useStyles = makeStyles(() => ({
 function Contact(){
     const { root, mailContainer, textBox, submitButton, divTitleButton, bold } = useStyles();
     const [ dataModal, setDataModal ] = useState({iconModal: '', titleModal:'', subtitleModal:'' });
-    const [ textFieldData, setTextFieldData ] = useState('')
+    const [ textFieldData, setTextFieldData ] = useState({subject: '', name: '', email: '' })
     const [ loading, setLoading ] = useState('')
     const [ isOpen, setIsOpen ] = useState(false);
 
@@ -54,18 +54,18 @@ function Contact(){
         { name: 'email', label: "contactMailEmail", validators: ['required', 'isEmail'], errorMessages:[t("textFieldMailRequired"), t("textFieldMailErrorMail")] },
     ]
 
-    const dataModalMail = [
-        { iconModal: ErrorIconLottie, titleModal:t("contactModalErrorTitle"), subtitleModal:"contactModalErrorSubtitle" },
-        { iconModal: SuccessMail, titleModal:t("contactModalSuccessTitle"), subtitleModal:"contactModalSuccessSubtitle" }
-    ]
+    const dataModalMail = {
+        RESULT_ERROR: { iconModal: ErrorIconLottie, titleModal:t("contactModalErrorTitle"), subtitleModal:"contactModalErrorSubtitle" },
+        RESULT_SUCCESS: { iconModal: SuccessMail, titleModal:t("contactModalSuccessTitle"), subtitleModal:"contactModalSuccessSubtitle" }
+    }
     
     const sendMail = (e) => {
         setLoading(true);
         emailjs.sendForm(MAIL_SERVICE_ID, MAIL_TEMPLATE_ID , e.target, MAIL_USER_ID)
             .then((result) => {
-                handleOpenModal(dataModalMail[1])
+                handleOpenModal(dataModalMail.RESULT_SUCCESS)
             }, (error) => {
-                handleOpenModal(dataModalMail[0])
+                handleOpenModal(dataModalMail.RESULT_ERROR)
             })            
     }
 

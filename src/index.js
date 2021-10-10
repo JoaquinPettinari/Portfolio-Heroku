@@ -7,14 +7,12 @@ import theme from './theme';
 import { ThemeProvider } from '@material-ui/core';
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <React.StrictMode>
-      <Router>
-        <Suspense fallback="Loading...">
-            <App />
-        </Suspense>
-      </Router>
-    </React.StrictMode>
+  <ThemeProvider theme={theme}>    
+    <Router>
+      <Suspense fallback="Loading...">
+        <App />
+      </Suspense>
+    </Router>    
   </ThemeProvider>,
   document.getElementById('root')
 );
