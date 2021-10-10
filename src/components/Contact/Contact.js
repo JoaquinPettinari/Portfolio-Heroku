@@ -45,6 +45,7 @@ function Contact(){
     const { root, mailContainer, textBox, submitButton, divTitleButton, bold } = useStyles();
     const [ dataModal, setDataModal ] = useState({iconModal: '', titleModal:'', subtitleModal:'' });
     const [ textFieldData, setTextFieldData ] = useState('')
+    const [ loading, setLoading ] = useState('')
     const [ isOpen, setIsOpen ] = useState(false);
 
     const textFiledData = [
@@ -58,13 +59,14 @@ function Contact(){
         { iconModal: SuccessMail, titleModal:t("contactModalSuccessTitle"), subtitleModal:"contactModalSuccessSubtitle" }
     ]
     
-    const sendMail = (e) => {        
+    const sendMail = (e) => {
+        setLoading(true);
         emailjs.sendForm(MAIL_SERVICE_ID, MAIL_TEMPLATE_ID , e.target, MAIL_USER_ID)
             .then((result) => {
                 handleOpenModal(dataModalMail[1])
             }, (error) => {
                 handleOpenModal(dataModalMail[0])
-        });        
+            })            
     }
 
     const goToLinkedin = () => {
@@ -97,7 +99,8 @@ function Contact(){
         setIsOpen(false)
     }
 
-    const handleOpenModal = (data) => {        
+    const handleOpenModal = (data) => {
+        setLoading('')
         setDataModal(data)
         setIsOpen(true)
     }
@@ -173,6 +176,7 @@ function Contact(){
                         </Grid>
                         <Grid item xs={12} sm={4} md={3} className={submitButton}>
                             <JPButton
+                                loading={loading.toString()}
                                 label={t("contactMailSendMessage")}
                                 type="submit"
                                 fullWidth

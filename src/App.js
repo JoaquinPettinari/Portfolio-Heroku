@@ -12,8 +12,7 @@ import Footer from './components/Footer/Footer';
 function App() {
 
   return (
-    <ScrollingProvider>
-      {console.log(process.env.REACT_APP_SALUDOS)}
+    <ScrollingProvider>  
       <NavBar />
       <Section id="home">
         <Home />

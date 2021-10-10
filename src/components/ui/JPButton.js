@@ -1,4 +1,5 @@
-import { Button, makeStyles } from "@material-ui/core";
+import { Button, CircularProgress, makeStyles } from "@material-ui/core";
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(() => ({    
     button:{
@@ -6,6 +7,10 @@ const useStyles = makeStyles(() => ({
         borderRadius:'0.5em',
         fontWeight:'bold',
         fontSize:'1em',
+        "&:hover": {
+            backgroundColor: 'white',
+            color:'black',            
+          }
     },
     capitalize:{
         textTransform:'none'
@@ -14,19 +19,27 @@ const useStyles = makeStyles(() => ({
 
 function JPButton(props){
     const classes = useStyles()
-    const { onClick, label, capitalize } = props
+    const { onClick, label, capitalize, loading } = props
 
     return(
         <Button
             variant="contained"
             onClick={onClick}
             color="primary"
-            className={`${classes.button} ${capitalize && classes.capitalize}`}
+            className={`${classes.button} ${capitalize ? classes.capitalize : ''}`}
+            disabled={loading ? true : false }
             {...props}
         >
-            {label}
+            {loading ? <CircularProgress color="primary" /> : label}
         </Button>
     )
+}
+
+JPButton.propTypes={
+    label: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
+    capitalize: PropTypes.string,
+    loading: PropTypes.string
 }
 
 export default JPButton;

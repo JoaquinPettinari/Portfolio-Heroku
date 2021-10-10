@@ -22,11 +22,11 @@ function Layout(props){
     const { root, root2, containerDescription } = useStyles()    
 
     return(
-        <Grid container className={background && root} justifyContent="center" id="MyContainerId">
+        <Grid container className={background ? root : ''} justifyContent="center" id="MyContainerId">
             <Grid item xs={8} sm={4} md={3} >                
                 <TitleText label={t(title)} />
             </Grid>
-            <Grid container spacing={5} className={minHeightStyle && root2} alignContent="center" justifyContent="center">
+            <Grid container spacing={5} className={minHeightStyle ? root2 : ''} alignContent="center" justifyContent="center">
                 <Grid item xs={8} sm={6}>                    
                     <Lottie options={{animationData: lottieIcon, ...defaultOptions}} />
                 </Grid>
