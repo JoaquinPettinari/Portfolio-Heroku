@@ -37,8 +37,6 @@ function Jobs(){
         <Layout
             title="buttonJobs"
             lottieIcon={Working}
-            background={true}
-            minHeightStyle="true"
         >            
             { listOfJobs.map(({ positionName, positionDate, positionCompanyName, positionStack }, index ) => {
                     return (

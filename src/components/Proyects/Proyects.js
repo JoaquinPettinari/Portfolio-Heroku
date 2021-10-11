@@ -21,7 +21,6 @@ function Proyects(){
         <Layout
             title="buttonProyects"
             lottieIcon={ProyectIcon}
-            background={true}
         >
             {
                 listOfProyects.map(({ image, alt, proyectDescription,proyectRepository, proyectPage, proyectRepositoryValue, proyectPageValue}, index) => {

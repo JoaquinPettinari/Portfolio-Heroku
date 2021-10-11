@@ -16,7 +16,7 @@ import { i18n, useTranslate as t, useDefaultLanguage } from '../../translation';
 import spainImage from '../../assets/spain.png'
 import englandImage from '../../assets/england.png'
 import { useScrollSection } from "react-scroll-section";
-  
+import { connect } from "react-redux";
   
   const useStyles = makeStyles(() => ({   
     logo: {
@@ -54,7 +54,7 @@ import { useScrollSection } from "react-scroll-section";
     }
   }));
   
-  export default function NavBar() {
+  function NavBar(props) {
     const { logo, menuButton, toolbar, drawerContainer, menuButtonDesktop, isLanguageSelected } = useStyles();    
     const homeSection = useScrollSection('home');
     const aboutSection = useScrollSection('about');
@@ -98,7 +98,8 @@ import { useScrollSection } from "react-scroll-section";
         },
     ];
   
-    useEffect(() => {
+    useEffect(() => {      
+
       const setResponsiveness = () => {
         return window.innerWidth < 900
           ? setState((prevState) => ({ ...prevState, mobileView: true }))
@@ -177,6 +178,7 @@ import { useScrollSection } from "react-scroll-section";
     };
 
     const getLanguageInput = () => {
+        
         return (
           <ButtonGroup disableElevation variant="contained" color="primary" >            
             <Button className={languageSelected === "en" && isLanguageSelected} onClick={() => handleChangeLanguage("en")} ><img src={englandImage} alt="British Icon" /></Button>
@@ -217,9 +219,15 @@ import { useScrollSection } from "react-scroll-section";
   
     return (
       <header style={{ display:'flex'}}>
-        <AppBar color="primary">
+        <AppBar color="primary">          
           {mobileView ? displayMobile() : displayDesktop()}        
         </AppBar>
       </header>
     );
   }
+
+  const mapStateToProps = state => ({
+    data: state.data
+  });
+  
+  export default connect(mapStateToProps)(NavBar);

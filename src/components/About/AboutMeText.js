@@ -8,7 +8,9 @@ const useStyles = makeStyles(() => ({
         fontWeight:'bold',
     },
     aboutMySelf:{
-        lineHeight: '1',
+        lineHeight: '1.5',
+        marginTop:'10px',
+        fontFamily: 'Arial'
     },
     marginTop:{
         marginTop:'20px'
@@ -26,17 +28,17 @@ function AboutMeText(){
             <Typography variant="h6" >
                 {t("aboutProfession")}
             </Typography>            
-            <Typography variant="subtitle1" className={`${aboutMySelf} ${bold}`} >
-                <br />
+            <Typography variant="subtitle1" className={`${aboutMySelf}`} >                
                 <Trans components={{ br: <br />}}>
                     {t("aboutMySelf")}
                 </Trans>
             </Typography>
-            <Grid className={marginTop} >
+            <Grid item xs={8} sm={5} md={5} className={marginTop} >
                 <JPButton
                     label={t("homeDownloadCV")}
                     capitalize={true.toString()}
                     href={CVJoaquin}
+                    fullWidth
                     target="_blank"
                     download="Joaquin-Pettinari-CV.pdf"
                     />

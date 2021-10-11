@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
         borderBottom:'1px solid black',
         borderTop:'1px solid black',
         borderRadius:'0',
-        marginTop:'50px',
+        marginTop:'90px',
         textAlign:'center',
     },
     fontStyle:{

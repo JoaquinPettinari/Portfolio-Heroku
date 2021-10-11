@@ -8,26 +8,49 @@ import Jobs from './components/Jobs/Jobs';
 import Proyects from './components/Proyects/Proyects';
 import Studys from './components/Studys/Studys';
 import Footer from './components/Footer/Footer';
+import SectionContainer from './components/ui/SectionContainer';
+// import { useEffect } from 'react';
+import { fetchGetWeatherInfo } from "./actions/fetchGetWeather";
+import { connect } from "react-redux";
 
-function App() {
+function App(props) {
+  // const { fetchGetWeatherInfo, data } = props;
+
+
+  // useEffect(() => {
+  //   window.navigator.geolocation.getCurrentPosition(
+  //     (position) => {
+  //       fetchGetWeatherInfo(position.coords.latitude, position.coords.longitude)        
+  //     }
+  //   )
+  // }, [])
+
 
   return (
-    <ScrollingProvider>  
-      <NavBar />
+    <ScrollingProvider>
+      <NavBar />      
       <Section id="home">
         <Home />
       </Section>
       <Section id="about">
-        <About />
+        <SectionContainer>
+          <About />
+        </SectionContainer>
       </Section>
       <Section id="jobs">
-        <Jobs />
+        <SectionContainer greyBackground="true">
+          <Jobs />
+        </SectionContainer>
       </Section>
       <Section id="studys">
-        <Studys />
+        <SectionContainer>
+          <Studys />
+        </SectionContainer>
       </Section>
       <Section id="proyects">
-        <Proyects />
+        <SectionContainer greyBackground="true">
+          <Proyects />
+        </SectionContainer>
       </Section>
       <Section id="contact">
         <Contact />
@@ -37,4 +60,12 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  data: state.wheatherReducer
+});
+
+const mapDispatchToProps = {
+  fetchGetWeatherInfo
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

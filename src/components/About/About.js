@@ -16,7 +16,7 @@ import { useTranslate as t } from '../../translation';
 const useStyles = makeStyles(({theme}) => ({    
     root:{
         minHeight:'90vh',
-        padding:'30px 0',
+        padding:'60px 0',
         ['@media (max-width:600px)']: { // eslint-disable-line no-useless-computed-key
             height: 'auto',
             margin: '50px 0'
@@ -41,9 +41,8 @@ const useStyles = makeStyles(({theme}) => ({
             justifyContent:'flex-start',
         },
     },
-    technologysImage:{
-        objectFit:'container',
-        width:'5rem',
+    technologysImage:{        
+        minWidth:'5rem',
         height:'5rem',
         // ['@media (max-width:1100px)']: { // eslint-disable-line no-useless-computed-key
         //     width:'4rem',
