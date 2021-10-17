@@ -9,6 +9,7 @@ import {
     Link,
     MenuItem,  
     ButtonGroup,
+    Grid,
   } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState, useEffect } from "react";
@@ -61,7 +62,8 @@ import { connect } from "react-redux";
     const jobsSection = useScrollSection('jobs');
     const studysSection = useScrollSection('studys');
     const contactSection = useScrollSection('contact');
-    const proyectsSection = useScrollSection('proyects');    
+    const proyectsSection = useScrollSection('proyects');
+    const { data } = props.data;
   
     const [state, setState] = useState({
       mobileView: false,
@@ -177,13 +179,34 @@ import { connect } from "react-redux";
       });
     };
 
+    const getHour = () => {
+      const date = new Date();
+      const hour = date.getHours();
+      const { day, eve, night, morn } = data;
+      if(hour > 0 && hour <= 6){
+        return morn
+      }
+      else if(hour > 6 && hour <= 12){
+        return day 
+      }
+      else if(hour > 12 && hour <= 18){
+        return eve
+      }
+      else return night
+    }
+
     const getLanguageInput = () => {
-        
         return (
-          <ButtonGroup disableElevation variant="contained" color="primary" >            
-            <Button className={languageSelected === "en" && isLanguageSelected} onClick={() => handleChangeLanguage("en")} ><img src={englandImage} alt="British Icon" /></Button>
-            <Button className={languageSelected === "sp" && isLanguageSelected} onClick={() => handleChangeLanguage("sp")} ><img src={spainImage} alt="Spain Icon" /></Button>
-          </ButtonGroup>
+          <Grid container alignItems="center">
+            <Typography variant="body2" style={{ marginRight:'5px'}}>
+              {getHour()}
+              <sup>°C</sup>
+            </Typography>   
+            <ButtonGroup disableElevation variant="contained" color="primary" >            
+              <Button className={languageSelected === "en" && isLanguageSelected} onClick={() => handleChangeLanguage("en")} ><img src={englandImage} alt="British Icon" /></Button>
+              <Button className={languageSelected === "sp" && isLanguageSelected} onClick={() => handleChangeLanguage("sp")} ><img src={spainImage} alt="Spain Icon" /></Button>
+            </ButtonGroup>
+          </Grid>
         )
     }
 
@@ -227,7 +250,7 @@ import { connect } from "react-redux";
   }
 
   const mapStateToProps = state => ({
-    data: state.data
+    data: state.wheatherReducer
   });
   
   export default connect(mapStateToProps)(NavBar);

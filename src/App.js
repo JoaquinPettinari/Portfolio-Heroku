@@ -9,21 +9,21 @@ import Proyects from './components/Proyects/Proyects';
 import Studys from './components/Studys/Studys';
 import Footer from './components/Footer/Footer';
 import SectionContainer from './components/ui/SectionContainer';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { fetchGetWeatherInfo } from "./actions/fetchGetWeather";
 import { connect } from "react-redux";
 
 function App(props) {
-  // const { fetchGetWeatherInfo, data } = props;
+  const { fetchGetWeatherInfo } = props;
 
 
-  // useEffect(() => {
-  //   window.navigator.geolocation.getCurrentPosition(
-  //     (position) => {
-  //       fetchGetWeatherInfo(position.coords.latitude, position.coords.longitude)        
-  //     }
-  //   )
-  // }, [])
+  useEffect(() => {
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        fetchGetWeatherInfo(position.coords.latitude, position.coords.longitude)        
+      }
+    )
+  })
 
 
   return (
