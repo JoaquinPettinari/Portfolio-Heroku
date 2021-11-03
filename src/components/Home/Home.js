@@ -3,7 +3,7 @@ import { useTranslate as t } from '../../translation';
 import { useScrollSection } from "react-scroll-section"
 import HomeBackground from '../../assets/homeBackground.jpg'
 import JPButton from "../ui/JPButton"
-import LessIcon from "../../assets/lotties/>Icon.json"
+import LessIcon from "../../assets/lotties/icon.json"
 import Lottie from "react-lottie"
 import { defaultOptions } from "../../lottieConfig"
 
